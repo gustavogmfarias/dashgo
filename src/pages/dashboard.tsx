@@ -7,9 +7,8 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const options = {
   chart: {
-    toolbar: false,
-    id: "basic-bar",
-    zoomEnabled: false,
+    toolbar: { show: false },
+    zoom: { enabled: false },
     foreColor: theme.colors.gray[500],
   },
   grid: { show: false },
@@ -29,7 +28,17 @@ const options = {
       "2021-04-18T00:00:00.000Z",
     ],
   },
+  fill: {
+    opacity: 0.3,
+    type: "gradient",
+    gradient: {
+      shade: "dark",
+      opacityFrom: 0.7,
+      opacityTo: 0.3,
+    },
+  },
 };
+
 const series = [{ name: "series1", data: [31, 120, 10, 28, 61, 180, 109] }];
 
 export default function Dashboard() {
@@ -50,10 +59,11 @@ export default function Dashboard() {
             </Text>
             <Chart options={options} series={series} type="area" height={160} />
           </Box>
-          <Box p="8" bg="gray.800">
+          <Box p="8" bg="gray.800" borderRadius={8} pb="4">
             <Text fontSize="lg" mb="4">
               Taxa de Abertura
             </Text>
+            <Chart options={options} series={series} type="area" height={160} />
           </Box>
         </SimpleGrid>
       </Flex>

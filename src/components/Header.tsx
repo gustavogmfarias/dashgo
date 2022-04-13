@@ -56,8 +56,8 @@ export function Header() {
           borderRightWidth={1}
           borderColor="gray.700"
         >
-          <Icon as={RiNotificationLine} font-size="20" />
-          <Icon as={RiUserAddLine} font-size="20" />
+          <Icon as={RiNotificationLine} fontSize="20" />
+          <Icon as={RiUserAddLine} fontSize="20" />
         </HStack>
       </Flex>
 
